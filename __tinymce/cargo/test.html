@@ -1,0 +1,92 @@
+<style>body{background:white;font:normal normal 13px/1.4 arial;color:#333}</style>
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<textarea name="content" class="textarea-block textarea-expand code MTE" cols="30" rows="10"></textarea>
+<script src="tinymce.custom.min.js"></script>
+<script>
+tinymce.init({
+    selector: 'textarea.MTE',
+    skin: 'normal',
+    theme: 'mecha',
+    language: 'en_US',
+    plugins: ['pagebreak advlist autolink lists link image charmap print hr searchreplace wordcount code fullscreen charmap insertdatetime media table contextmenu template textcolor colorpicker'],
+    toolbar1: 'bold italic underline strikethrough | blockquote hr | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | link image media',
+    toolbar2: 'undo redo | fontselect | styleselect | print | table superscript subscript removeformat | forecolor backcolor | fullscreen',
+    toolbar3: 'pagebreak | template charmap | insertdatetime',
+    image_advtab: true,
+    menubar: true,
+    target_list: [{
+        title: 'None',
+        value: ""
+    }, {
+        title: 'Same Page',
+        value: '_self'
+    }, {
+        title: 'New Page',
+        value: '_blank'
+    }],
+    rel_list: [{
+        title: 'None',
+        value: ""
+    }, {
+        title: 'No Follow',
+        value: 'nofollow'
+    }],
+    contextmenu: 'code | link image inserttable | cell row column deletetable',
+    pagebreak_split_block: true,
+    templates: [{
+        title: 'Image Caption',
+        description: 'Image with caption\u2026',
+        content: '<figure class="image-container align-center"><img alt="Placeholder Image" src="' + tinymce.baseURL + '/skins/normal/img/placeholder.png" width="300" height="200" /><figcaption><p>Image caption goes here&hellip;</p></figcaption></figure>'
+    }, {
+        title: '2 Columns',
+        description: 'Two-column layout\u2026',
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-3"><p>Column 1</p></div><div class="grid span-3"><p>Column 2</p></div></div><p>Text goes here&hellip;</p>'
+    }, {
+        title: '3 Columns',
+        description: 'Three-column layout\u2026',
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-2">Column 1</div><div class="grid span-2">Column 2</div><div class="grid span-2">Column 3</div></div><p>Text goes here&hellip;</p>'
+    }, {
+        title: '6 Columns',
+        description: 'Six-column layout\u2026',
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-1">Column 1</div><div class="grid span-1">Column 2</div><div class="grid span-1">Column 3</div><div class="grid span-1">Column 4</div><div class="grid span-1">Column 5</div><div class="grid span-1">Column 6</div></div><p>Text goes here&hellip;</p>'
+    }],
+    textcolor_map: ['000000', 'Black', '993300', 'Burnt orange', '333300', 'Dark olive', '003300', 'Dark green', '003366', 'Dark azure', '000080', 'Navy Blue', '333399', 'Indigo', '555555', 'Very dark gray', '800000', 'Maroon', 'FF6600', 'Orange', '808000', 'Olive', '008000', 'Green', '008080', 'Teal', '0000FF', 'Blue', '666699', 'Grayish blue', '808080', 'Gray', 'FF0000', 'Red', 'FF9900', 'Amber', '99CC00', 'Yellow green', '339966', 'Sea green', '33CCCC', 'Turquoise', '3366FF', 'Royal blue', '800080', 'Purple', '999999', 'Medium gray', 'FF00FF', 'Magenta', 'FFCC00', 'Gold', 'FFFF00', 'Yellow', '00FF00', 'Lime', '00FFFF', 'Aqua', '00CCFF', 'Sky blue', '993366', 'Red violet', 'FFFFFF', 'White', 'FF99CC', 'Pink', 'FFCC99', 'Peach', 'FFFF99', 'Light yellow', 'CCFFCC', 'Pale green', 'CCFFFF', 'Pale cyan', '99CCFF', 'Light sky blue', 'CC99FF', 'Plum'],
+    font_formats: 'Andale Mono="andale mono",monospace;' + 'Arial=arial,helvetica,sans-serif;' + 'Arial Black="arial black",sans-serif;' + 'Book Antiqua="book antiqua",palatino,serif;' + 'Comic Sans MS="comic sans ms",sans-serif;' + 'Courier New="courier new",courier,monospace;' + 'Georgia=georgia,palatino,serif;' + 'Helvetica=helvetica,arial,sans-serif;' + 'Impact=impact,sans-serif;' + 'Symbol=symbol;' + 'Tahoma=tahoma,arial,helvetica,sans-serif;' + 'Terminal=terminal,monaco,monospace;' + 'Times New Roman=times new roman,times,serif;' + 'Trebuchet MS=trebuchet ms,geneva,sans-serif;' + 'Verdana=verdana,geneva,sans-serif;' + 'Webdings=webdings;' + 'Wingdings=wingdings,zapf dingbats',
+    style_formats: [{
+        title: 'Headings',
+        items: [{
+            title: 'Heading 1',
+            format: 'h1'
+        }, {
+            title: 'Heading 2',
+            format: 'h2'
+        }, {
+            title: 'Heading 3',
+            format: 'h3'
+        }, {
+            title: 'Heading 4',
+            format: 'h4'
+        }, {
+            title: 'Heading 5',
+            format: 'h5'
+        }, {
+            title: 'Heading 6',
+            format: 'h6'
+        }]
+    }, {
+        title: 'Blocks',
+        items: [{
+            title: 'Paragraph',
+            format: 'p'
+        }, {
+            title: 'Preformatted',
+            format: 'pre'
+        }, {
+            title: 'Code',
+            format: 'code'
+        }]
+    }],
+    insertdatetime_formats: ["%H:%M:%S", "%I:%M:%S %p", "%Y-%m-%d", "%Y/%m/%d %H:%M:%S"]
+});
+</script>

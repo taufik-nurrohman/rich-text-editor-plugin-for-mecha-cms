@@ -1,0 +1,83 @@
+@import url('http://localhost/mecha/cabinet/shields/widgets.css');
+@import url('http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css');
+/* Required for `.mce-menu-item-preview` */
+html {
+  font-size:14px;
+  background-color:#333;
+  color:white;
+  overflow:auto;
+  padding:1em;
+}
+body {
+  background:none;
+  font:inherit;
+  color:inherit;
+  overflow:inherit;
+}
+pre {
+  background-color:white;
+  color:#333;
+}
+.mce-object {
+  border:1px dotted #3A3A3A;
+  background:#d5d5d5 url(img/object.gif) no-repeat center;
+}
+.mce-pagebreak {
+  cursor:default;
+  display:block;
+  margin:0 auto;
+  width:90%;
+  height:.2em;
+  border:1px dashed;
+  border-color:rgba(255,255,255,.5);
+  page-break-before:always;
+}
+@media print {
+  .mce-pagebreak {border:0}
+}
+.mce-item-anchor {
+  cursor:default;
+  display:inline-block;
+  -webkit-user-select:all;
+  -webkit-user-modify:read-only;
+  -moz-user-select:all;
+  -moz-user-modify:read-only;
+  user-select:all;
+  user-modify:read-only;
+  width:9px !important;
+  height:9px !important;
+  border:1px dotted #3A3A3A;
+  background:#d5d5d5 url(img/anchor.gif) no-repeat center;
+}
+.mce-nbsp,
+.mce-shy {background:#AAA}
+.mce-shy::after {content:'-'}
+hr {cursor:default}
+.mce-match-marker {
+  background:#AAA;
+  color:#fff;
+}
+.mce-match-marker-selected {
+  background:#39f;
+  color:#fff;
+}
+.mce-spellchecker-word {
+  border-bottom:2px solid red;
+  cursor:default;
+}
+.mce-spellchecker-grammar {
+  border-bottom:2px solid green;
+  cursor:default;
+}
+.mce-item-table,
+.mce-item-table td,
+.mce-item-table th,
+.mce-item-table caption {
+  border:1px dotted;
+  border-color:rgba(255,255,255,.5);
+}
+.mce-item-table td,
+.mce-item-table th {padding:.2em}
+td.mce-item-selected,
+th.mce-item-selected {background-color:#39f !important}
+.mce-edit-focus {outline:1px dotted #333}
