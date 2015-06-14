@@ -68,7 +68,8 @@
   color:white;
   border:0;
 }
-.mce-container .mce-container-body {background:none}
+.mce-panel .mce-container,
+.mce-panel .mce-container-body {background:none}
 
 /* @abs (absolute) */
 .mce-abs-layout {position:relative}
@@ -86,11 +87,10 @@ body .mce-abs-layout-item,
   display:inline-block;
   height:2em;
   line-height:2em;
+  cursor:pointer;
 }
 .mce-btn:focus,
-.mce-btn:hover {
-  background-color:#373737;
-}
+.mce-btn:hover {background-color:#373737}
 .mce-btn:active {background-color:#2F2F2F}
 .mce-btn.mce-disabled button,
 .mce-btn.mce-disabled:hover button {
@@ -104,22 +104,16 @@ body .mce-abs-layout-item,
   line-height:inherit;
   text-align:center;
   overflow:visible;
-  cursor:pointer;
+  cursor:inherit;
   padding:0 .5em;
   -webkit-appearance:none;
-}
-.mce-splitbtn .mce-open {
-  margin-right:-.5em;
-  margin-left:.5em;
 }
 .mce-btn.mce-active,
 .mce-btn.mce-active:focus,
 .mce-btn.mce-active:hover,
 .mce-splitbtn .mce-open.mce-active,
 .mce-splitbtn .mce-open.mce-active:focus,
-.mce-splitbtn .mce-open.mce-active:hover {
-  background-color:#365D98;
-}
+.mce-splitbtn .mce-open.mce-active:hover {background-color:#365D98}
 
 /* @btn-group */
 .mce-btn-group + .mce-btn-group {
@@ -140,7 +134,7 @@ body .mce-abs-layout-item,
 .mce-toolbar + .mce-toolbar {margin-top:.15384615384615385em}
 .mce-toolbar-grp {
   padding:.2em;
-  border-bottom:1px solid;
+  border-bottom:2px solid;
 }
 
 /* @statusbar */
@@ -150,7 +144,7 @@ body .mce-abs-layout-item,
 }
 
 /* @menubar */
-.mce-menubar {border-bottom:1px solid}
+.mce-menubar {border-bottom:2px solid}
 .mce-menubar .mce-btn button {}
 
 /* @menu */
@@ -164,18 +158,6 @@ body .mce-abs-layout-item,
 }
 .mce-menu i {display:none}
 .mce-menu-has-icons i {display:inline-block}
-
-/* @menubtn */
-.mce-menubtn {padding:0 .5em}
-.mce-menubtn:focus,
-.mce-menubtn:hover {
-  background-color:#373737;
-}
-.mce-menubtn.mce-active {background-color:#365D98}
-.mce-menubtn button {
-  padding-right:0;
-  padding-left:0;
-}
 
 /* @menu-item */
 .mce-menu-item {
@@ -249,15 +231,11 @@ body .mce-abs-layout-item,
 .mce-floatpanel .mce-arrow,
 .mce-floatpanel .mce-arrow:after {display:none}
 .mce-floatpanel.mce-popover {
-  -webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);
-  -moz-box-shadow:0 5px 10px rgba(0,0,0,.2);
-  box-shadow:0 5px 10px rgba(0,0,0,.2);
   top:0;
   left:0;
 }
-.mce-floatpanel.mce-popover.mce-bottom {margin-top:.2em}
-.mce-floatpanel.mce-popover.mce-bottom.mce-start {margin-left:-1em}
-.mce-floatpanel.mce-popover.mce-bottom.mce-end {margin-left:1em}
+.mce-floatpanel.mce-popover.mce-bottom.mce-start {margin-left:-1.6em}
+.mce-floatpanel.mce-popover.mce-bottom.mce-end {margin-right:-1.6em}
 .mce-fullscreen {
   margin:0;
   padding:0;
@@ -300,6 +278,7 @@ body .mce-abs-layout-item,
   height:auto;
 }
 .mce-grid .mce-colorbtn-trans {
+  background:none;
   text-align:center;
   vertical-align:middle;
 }
@@ -315,11 +294,13 @@ body .mce-abs-layout-item,
 }
 .mce-label.mce-error {color:#A00}
 
+/* @menubtn */
+.mce-menubtn {}
+
 /* @listbox */
-.mce-listbox {cursor:pointer}
-.mce-listbox button {
+.mce-listbox {
   width:auto !important; /* hacky! - 4.1.10 */
-  cursor:inherit;
+  text-align:left;
 }
 .mce-listbox .mce-caret {}
 
@@ -421,7 +402,7 @@ body .mce-abs-layout-item,
 .mce-path {
   display:inline-block;
   line-height:1em;
-  padding:.5em .7em 2em;
+  padding:.5em .7em .7em;
   white-space:normal;
 }
 .mce-path .mce-path-body {display:inline}
@@ -439,11 +420,10 @@ body .mce-abs-layout-item,
 /* @wordcount */
 .mce-wordcount {
   display:block;
-  height:1em;
   line-height:1em;
   position:absolute;
   top:.5em;
-  right:.7em;
+  right:1.7em;
 }
 
 /* @charmap */
@@ -477,7 +457,7 @@ div.mce-fullscreen {
   height:auto;
 }
 .mce-fullscreen .mce-resizehandle {display:none}
-.mce-fullscreen .mce-path {padding-bottom:.5em}
+.mce-fullscreen .mce-wordcount {right:.7em}
 
 /* @tooltip */
 .mce-tooltip {
@@ -615,6 +595,8 @@ div.mce-fullscreen {
   overflow:hidden;
 }
 .mce-colorpicker-h-chunk {width:100%}
+.mce-colorbox {
+}
 .mce-colorbox i {
   border:1px solid;
   width:1em;

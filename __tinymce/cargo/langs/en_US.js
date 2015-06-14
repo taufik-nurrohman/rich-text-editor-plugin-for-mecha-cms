@@ -171,6 +171,7 @@ tinymce.addI18n('en_US', {
     "Show invisible characters": "Show Invisible Characters",
     "Words: {0}": "Words: {0}",
     "Insert": "Insert",
+    "Delete": "Delete",
     "File": "File",
     "Edit": "Edit",
     "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help": "Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help",
@@ -178,5 +179,8 @@ tinymce.addI18n('en_US', {
     "View": "View",
     "Table": "Table",
     "Format": "Format",
-    "No color": "No Color"
+    "No color": "No Color",
+    "Marker": "Marker",
+    "Keyboard": "Keyboard",
+    "Button": "Button"
 });

@@ -1,18 +1,25 @@
 <style>body{background:white;font:normal normal 13px/1.4 arial;color:#333}</style>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="http://localhost/__tinymce/cargo/skins/normal/skin.min.css?" rel="stylesheet">
 
 <textarea name="content" class="textarea-block textarea-expand code MTE" cols="30" rows="10"></textarea>
 <script src="tinymce.custom.min.js"></script>
 <script>
 tinymce.init({
     selector: 'textarea.MTE',
-    skin: 'normal',
+    height: 300,
+    skin: false, /* load the CSS manually (we need the file cache parameter) */
+    content_css: [
+        'http://localhost/mecha/cabinet/shields/widgets.css',
+        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css',
+        tinymce.baseURL + '/skins/normal/content.min.css'
+    ],
     theme: 'mecha',
     language: 'en_US',
-    plugins: ['pagebreak advlist autolink lists link image charmap print hr searchreplace wordcount code fullscreen charmap insertdatetime media table contextmenu template textcolor colorpicker'],
-    toolbar1: 'bold italic underline strikethrough | blockquote hr | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | link image media',
-    toolbar2: 'undo redo | fontselect | styleselect | print | table superscript subscript removeformat | forecolor backcolor | fullscreen',
-    toolbar3: 'pagebreak | template charmap | insertdatetime',
+    plugins: ['advlist autolink autosave charmap code colorpicker contextmenu fullscreen hr insertdatetime image link lists media pagebreak print searchreplace table template textcolor wordcount'],
+    toolbar1: 'bold italic underline strikethrough | removeformat | blockquote | hr | alignleft aligncenter alignright alignjustify | bullist numlist | superscript subscript | pagebreak',
+    toolbar2: 'undo redo | fontselect | styleselect | print | table | forecolor backcolor | link image media',
+    toolbar3: ' outdent indent | template | charmap | insertdatetime | code fullscreen fullpage',
     image_advtab: true,
     menubar: true,
     target_list: [{
@@ -33,7 +40,10 @@ tinymce.init({
         value: 'nofollow'
     }],
     contextmenu: 'code | link image inserttable | cell row column deletetable',
+    insertdatetime_element: true,
     pagebreak_split_block: true,
+    indentation: '1em',
+    indent_use_margin: true,
     templates: [{
         title: 'Image Caption',
         description: 'Image with caption\u2026',
@@ -52,7 +62,52 @@ tinymce.init({
         content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-1"><p>Column 1</p></div><div class="grid span-1"><p>Column 2</p></div><div class="grid span-1"><p>Column 3</p></div><div class="grid span-1"><p>Column 4</p></div><div class="grid span-1"><p>Column 5</p></div><div class="grid span-1"><p>Column 6</p></div></div><p>Text goes here&hellip;</p>'
     }],
     textcolor_map: ['000000', 'Black', '993300', 'Burnt orange', '333300', 'Dark olive', '003300', 'Dark green', '003366', 'Dark azure', '000080', 'Navy Blue', '333399', 'Indigo', '555555', 'Very dark gray', '800000', 'Maroon', 'FF6600', 'Orange', '808000', 'Olive', '008000', 'Green', '008080', 'Teal', '0000FF', 'Blue', '666699', 'Grayish blue', '808080', 'Gray', 'FF0000', 'Red', 'FF9900', 'Amber', '99CC00', 'Yellow green', '339966', 'Sea green', '33CCCC', 'Turquoise', '3366FF', 'Royal blue', '800080', 'Purple', '999999', 'Medium gray', 'FF00FF', 'Magenta', 'FFCC00', 'Gold', 'FFFF00', 'Yellow', '00FF00', 'Lime', '00FFFF', 'Aqua', '00CCFF', 'Sky blue', '993366', 'Red violet', 'FFFFFF', 'White', 'FF99CC', 'Pink', 'FFCC99', 'Peach', 'FFFF99', 'Light yellow', 'CCFFCC', 'Pale green', 'CCFFFF', 'Pale cyan', '99CCFF', 'Light sky blue', 'CC99FF', 'Plum'],
-    font_formats: 'Andale Mono=andale mono,monospace;' + 'Arial=arial,helvetica,sans-serif;' + 'Arial Black=arial black,sans-serif;' + 'Book Antiqua="book antiqua",palatino,serif;' + 'Comic Sans MS="comic sans ms",sans-serif;' + 'Courier New=courier new,courier,monospace;' + 'Georgia=georgia,palatino,serif;' + 'Helvetica=helvetica,arial,sans-serif;' + 'Impact=impact,sans-serif;' + 'Symbol=symbol;' + 'Tahoma=tahoma,arial,helvetica,sans-serif;' + 'Terminal=terminal,monaco,monospace;' + 'Times New Roman=times new roman,times,serif;' + 'Trebuchet MS=trebuchet ms,geneva,sans-serif;' + 'Verdana=verdana,geneva,sans-serif;' + 'Webdings=webdings;' + 'Wingdings=wingdings,zapf dingbats',
+    font_formats:
+        'Arial=Arial,sans-serif;' +
+        'Arial Black="Arial Black",Arial,sans-serif;' +
+        'Arial Narrow="Arial Narrow",Arial,sans-serif;' +
+        'Arial Rounded MT Bold="Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;' +
+        'Baskerville=Baskerville,"Baskerville Old Face","Hoefler Text",Garamond,"Times New Roman",Times,serif;' +
+        // 'Big Caslon="Big Caslon","Book Antiqua","Palatino Linotype",Georgia,"URW Bookman L",serif;' +
+        // 'Bodoni MT="Bodoni MT",Didot,"Didot LT STD","Hoefler Text",Garamond,"Times New Roman",Times,serif;' +
+        'Book Antiqua="Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,"URW Bookman L",serif;' +
+        // 'Brush Script MT="Brush Script MT",cursive;' +
+        // 'Calibri=Calibri,Candara,Segoe,"Segoe UI",Optima,Arial,sans-serif;' +
+        // 'Cambria=Cambria,"Hoefler Text",Utopia,"Liberation Serif","Nimbus Roman No9 L Regular",Times,"Times New Roman",serif;' +
+        // 'Candara=Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;' +
+        // 'Century Gothic="Century Gothic",CenturyGothic,"Apple Gothic",AppleGothic,sans-serif;' +
+        'Comic Sans MS="Comic Sans MS",sans-serif;' +
+        // 'Consolas=Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;' +
+        // 'Constantia=Constantia,"Lucida Bright",LucidaBright,"Lucida Serif",Lucida,"DejaVu Serif","Bitstream Vera Serif","Liberation Serif",Georgia,"URW Bookman L",serif;' +
+        // 'Copperplate=Copperplate,"Copperplate Gothic Light",fantasy;' +
+        // 'Corbel=Corbel,"Lucida Grande","Lucida Sans Unicode","Lucida Sans","DejaVu Sans","Bitstream Vera Sans","Liberation Sans",Verdana,"Verdana Ref",sans-serif;' +
+        'Courier New="Courier New",Courier,"Nimbus Mono L",monospace;' +
+        // 'Didot=Didot,"Didot LT STD","Hoefler Text",Garamond,"Times New Roman",Times,serif;' +
+        // 'Franklin Gothic Medium="Franklin Gothic Medium",Arial,sans-serif;' +
+        // 'Frutiger=Frutiger,"Frutiger Linotype",Univers,Calibri,"Gill Sans","Gill Sans MT","Myriad Pro",Myriad,"DejaVu Sans Condensed","Liberation Sans","Nimbus Sans L",Tahoma,Geneva,"Helvetica Neue",Helvetica,Arial,sans-serif;' +
+        // 'Futura=Futura,"Trebuchet MS",Arial,sans-serif;' +
+        'Garamond=Garamond,Baskerville,"Baskerville Old Face","Hoefler Text","Times New Roman",Times,serif;' +
+        'Georgia=Georgia,"URW Bookman L",serif;' +
+        // 'Gill Sans="Gill Sans","Gill Sans MT",Calibri,sans-serif;' +
+        'Goudy Old Style="Goudy Old Style",Garamond,"Big Caslon","Times New Roman",Times,serif;' +
+        'Helvetica=Helvetica,Arial,sans-serif;' +
+        'Helvetica Neue="Helvetica Neue",Helvetica,Arial,sans-serif;' +
+        // 'Hoefler Text="Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",Times,serif;' +
+        'Impact=Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,"Helvetica Inserat","Bitstream Vera Sans Bold","Arial Black",sans-serif;' +
+        // 'Lucida Bright="Lucida Bright",Georgia,"URW Bookman L",serif;' +
+        'Lucida Grande="Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;' +
+        // 'Lucida Sans Typewriter="Lucida Sans Typewriter","Lucida Console",Monaco,"Bitstream Vera Sans Mono",monospace;' +
+        // 'Optima=Optima,Segoe,"Segoe UI",Candara,Calibri,Arial,sans-serif;' +
+        'Palatino="Palatino Linotype",Palatino,"Palatino LT STD",Palladio,"URW Palladio L","Book Antiqua",Baskerville,"Bookman Old Style","Bitstream Charter","Nimbus Roman No9 L",Garamond,"Apple Garamond","ITC Garamond Narrow","New Century Schoolbook","Century Schoolbook","Century Schoolbook L",Georgia,"URW Bookman L",serif;' +
+        // 'Papyrus=Papyrus,fantasy;' +
+        // 'Rockwell=Rockwell,"Courier Bold",Courier,Georgia,"URW Bookman L",serif;' +
+        // 'Rockwell Extra Bold="Rockwell Extra Bold","Rockwell Bold",monospace;' +
+        // 'Segoe UI="Segoe UI",Segoe,Candara,"Bitstream Vera Sans","DejaVu Sans","Bitstream Vera Sans","Trebuchet MS",Verdana,"Verdana Ref",sans-serif;' +
+        'Tahoma=Tahoma,Geneva,Verdana,sans-serif;' +
+        'Terminal=Terminal,Monaco,monospace;' +
+        'Times New Roman="Times New Roman",Times,serif;' +
+        'Trebuchet MS="Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;' +
+        'Verdana=Verdana,Geneva,sans-serif;',
     style_formats: [{
         title: 'Headings',
         items: [{
@@ -80,11 +135,29 @@ tinymce.init({
             title: 'Paragraph',
             format: 'p'
         }, {
+            title: 'Blockquote',
+            format: 'blockquote'
+        }, {
             title: 'Preformatted',
             format: 'pre'
-        }, {
+        }]
+    }, {
+        title: 'Inline',
+        items: [{
             title: 'Code',
             format: 'code'
+        }, {
+            title: 'Marker',
+            format: 'mark'
+        }, {
+            title: 'Keyboard',
+            format: 'kbd'
+        }, {
+            title: 'Insert',
+            format: 'ins'
+        }, {
+            title: 'Delete',
+            format: 'del'
         }]
     }],
     insertdatetime_formats: ["%H:%M:%S", "%I:%M:%S %p", "%Y-%m-%d", "%Y/%m/%d %H:%M:%S"]
