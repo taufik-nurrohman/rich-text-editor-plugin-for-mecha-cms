@@ -1,67 +1,78 @@
 <style>body{background:white;font:normal normal 13px/1.4 arial;color:#333}</style>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="http://localhost/__tinymce/cargo/skins/normal/skin.min.css?" rel="stylesheet">
+<link href="http://localhost/__tinymce/cargo/skins/normal/skin.min.css?c" rel="stylesheet">
 
 <textarea name="content" class="textarea-block textarea-expand code MTE" cols="30" rows="10"></textarea>
 <script src="tinymce.custom.min.js"></script>
 <script>
+var lorem = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>';
+var figure = '<figure class="image-container align-%1$s"><img alt="Placeholder Image" src="%2$s/skins/normal/img/placeholder.png" width="300" height="200" /><figcaption>Image caption goes here&hellip;</figcaption></figure>';
 tinymce.init({
     selector: 'textarea.MTE',
     height: 300,
     skin: false, /* load the CSS manually (we need the file cache parameter) */
     content_css: [
-        'http://localhost/mecha/cabinet/shields/widgets.css',
-        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css',
-        tinymce.baseURL + '/skins/normal/content.min.css'
+        'http://localhost/mecha/cabinet/shields/widgets.css?c',
+        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css?',
+        tinymce.baseURL + '/skins/normal/content.min.css?'
     ],
     theme: 'mecha',
     language: 'en_US',
-    plugins: ['advlist autolink autosave charmap code colorpicker contextmenu fullscreen hr insertdatetime image link lists media pagebreak print searchreplace table template textcolor wordcount'],
-    toolbar1: 'bold italic underline strikethrough | removeformat | blockquote | hr | alignleft aligncenter alignright alignjustify | bullist numlist | superscript subscript | pagebreak',
-    toolbar2: 'undo redo | fontselect | styleselect | print | table | forecolor backcolor | link image media',
-    toolbar3: ' outdent indent | template | charmap | insertdatetime | code fullscreen fullpage',
+    plugins: ['advlist autolink autosave charmap emoticons sourcecode colorpicker contextmenu fullscreen hr insertdatetime image link lists media pagebreak print searchreplace table template textcolor wordcount'],
+    toolbar1: 'bold italic underline strikethrough code | removeformat | paragraph blockquote | hr | alignleft aligncenter alignright alignjustify | bullist numlist | superscript subscript | pagebreak',
+    toolbar2: 'restoredraft undo redo | styleselect | fontselect fontsizeselect | print | table | forecolor backcolor | link image media',
+    toolbar3: ' outdent indent | template charmap emoticons insertdatetime | sourcecode fullscreen | searchreplace',
     image_advtab: true,
-    menubar: true,
+    menubar: false, // hide menubars
     target_list: [{
         title: 'None',
         value: ""
     }, {
-        title: 'Same Page',
+        title: 'Same window',
         value: '_self'
     }, {
-        title: 'New Page',
+        title: 'New window',
         value: '_blank'
     }],
     rel_list: [{
         title: 'None',
         value: ""
     }, {
-        title: 'No Follow',
+        title: 'Nofollow',
         value: 'nofollow'
     }],
-    contextmenu: 'code | link image inserttable | cell row column deletetable',
+    contextmenu: 'sourcecode | link image inserttable | cell row column deletetable',
     insertdatetime_element: true,
     pagebreak_split_block: true,
-    indentation: '1em',
+    autosave_restore_when_empty: false,
+    indentation: '2em',
     indent_use_margin: true,
     templates: [{
-        title: 'Image Caption',
+        title: 'Image Caption 1',
         description: 'Image with caption\u2026',
-        content: '<figure class="image-container align-center"><img alt="Placeholder Image" src="' + tinymce.baseURL + '/skins/normal/img/placeholder.png" width="300" height="200" /><figcaption><p>Image caption goes here&hellip;</p></figcaption></figure>'
+        content: figure.replace(/%1\$s/g, 'center').replace(/%2\$s/g, tinymce.baseURL) + lorem
+    }, {
+        title: 'Image Caption 2',
+        description: 'Image with caption\u2026',
+        content: figure.replace(/%1\$s/g, 'left').replace(/%2\$s/g, tinymce.baseURL) + lorem
+    }, {
+        title: 'Image Caption 3',
+        description: 'Image with caption\u2026',
+        content: figure.replace(/%1\$s/g, 'right').replace(/%2\$s/g, tinymce.baseURL) + lorem
     }, {
         title: '2 Columns',
         description: 'Two-column layout\u2026',
-        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-3"><p>Column 1</p></div><div class="grid span-3"><p>Column 2</p></div></div><p>Text goes here&hellip;</p>'
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-3"><h3>Column 1</h3>' + lorem + '</div><div class="grid span-3"><h3>Column 2</h3>' + lorem + '</div></div><p>Text goes here&hellip;</p>'
     }, {
         title: '3 Columns',
         description: 'Three-column layout\u2026',
-        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-2"><p>Column 1</p></div><div class="grid span-2"><p>Column 2</p></div><div class="grid span-2"><p>Column 3</p></div></div><p>Text goes here&hellip;</p>'
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-2"><h3>Column 1</h3>' + lorem + '</div><div class="grid span-2"><h3>Column 2</h3>' + lorem + '</div><div class="grid span-2"><h3>Column 3</h3>' + lorem + '</div></div><p>Text goes here&hellip;</p>'
     }, {
         title: '6 Columns',
         description: 'Six-column layout\u2026',
-        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-1"><p>Column 1</p></div><div class="grid span-1"><p>Column 2</p></div><div class="grid span-1"><p>Column 3</p></div><div class="grid span-1"><p>Column 4</p></div><div class="grid span-1"><p>Column 5</p></div><div class="grid span-1"><p>Column 6</p></div></div><p>Text goes here&hellip;</p>'
+        content: '<p>Text goes here&hellip;</p><div class="grid-group"><div class="grid span-1"><h3>Column 1</h3>' + lorem + '</div><div class="grid span-1"><h3>Column 2</h3>' + lorem + '</div><div class="grid span-1"><h3>Column 3</h3>' + lorem + '</div><div class="grid span-1"><h3>Column 4</h3>' + lorem + '</div><div class="grid span-1"><h3>Column 5</h3>' + lorem + '</div><div class="grid span-1"><h3>Column 6</h3>' + lorem + '</div></div><p>Text goes here&hellip;</p>'
     }],
-    textcolor_map: ['000000', 'Black', '993300', 'Burnt orange', '333300', 'Dark olive', '003300', 'Dark green', '003366', 'Dark azure', '000080', 'Navy Blue', '333399', 'Indigo', '555555', 'Very dark gray', '800000', 'Maroon', 'FF6600', 'Orange', '808000', 'Olive', '008000', 'Green', '008080', 'Teal', '0000FF', 'Blue', '666699', 'Grayish blue', '808080', 'Gray', 'FF0000', 'Red', 'FF9900', 'Amber', '99CC00', 'Yellow green', '339966', 'Sea green', '33CCCC', 'Turquoise', '3366FF', 'Royal blue', '800080', 'Purple', '999999', 'Medium gray', 'FF00FF', 'Magenta', 'FFCC00', 'Gold', 'FFFF00', 'Yellow', '00FF00', 'Lime', '00FFFF', 'Aqua', '00CCFF', 'Sky blue', '993366', 'Red violet', 'FFFFFF', 'White', 'FF99CC', 'Pink', 'FFCC99', 'Peach', 'FFFF99', 'Light yellow', 'CCFFCC', 'Pale green', 'CCFFFF', 'Pale cyan', '99CCFF', 'Light sky blue', 'CC99FF', 'Plum'],
+    textcolor_map: ['000000', 'Black', '993300', 'Burnt Orange', '333300', 'Dark Olive', '003300', 'Dark Green', '003366', 'Dark Azure', '000080', 'Navy Blue', '333399', 'Indigo', '555555', 'Very Dark Gray', '800000', 'Maroon', 'FF6600', 'Orange', '808000', 'Olive', '008000', 'Green', '008080', 'Teal', '0000FF', 'Blue', '666699', 'Grayish Blue', '808080', 'Gray', 'FF0000', 'Red', 'FF9900', 'Amber', '99CC00', 'Yellow Green', '339966', 'Sea green', '33CCCC', 'Turquoise', '3366FF', 'Royal blue', '800080', 'Purple', '999999', 'Medium Gray', 'FF00FF', 'Magenta', 'FFCC00', 'Gold', 'FFFF00', 'Yellow', '00FF00', 'Lime', '00FFFF', 'Aqua', '00CCFF', 'Sky Blue', '993366', 'Red Violet', 'FFFFFF', 'White', 'FF99CC', 'Pink', 'FFCC99', 'Peach', 'FFFF99', 'Light Yellow', 'CCFFCC', 'Pale Green', 'CCFFFF', 'Pale Cyan', '99CCFF', 'Light Sky Blue', 'CC99FF', 'Plum'],
     font_formats:
         'Arial=Arial,sans-serif;' +
         'Arial Black="Arial Black",Arial,sans-serif;' +
@@ -108,8 +119,9 @@ tinymce.init({
         'Times New Roman="Times New Roman",Times,serif;' +
         'Trebuchet MS="Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;' +
         'Verdana=Verdana,Geneva,sans-serif;',
+    fontsize_formats: '8=8pt 10=10pt 12=12pt 14=14pt 16=16pt',
     style_formats: [{
-        title: 'Headings',
+        title: 'Heading',
         items: [{
             title: 'Heading 1',
             format: 'h1'
@@ -130,7 +142,7 @@ tinymce.init({
             format: 'h6'
         }]
     }, {
-        title: 'Blocks',
+        title: 'Block',
         items: [{
             title: 'Paragraph',
             format: 'p'

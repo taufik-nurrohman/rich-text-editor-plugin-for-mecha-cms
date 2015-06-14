@@ -38,6 +38,7 @@
   margin:0;
   padding:0;
   border:0;
+  outline:0;
 }
 
 /* @iframe */
@@ -284,14 +285,26 @@ body .mce-abs-layout-item,
 }
 .mce-grid .mce-colorbtn-trans div {display:inline}
 
+/* @emoticon (custom by Mecha CMS) */
+.mce-grid-emoticon,
+.mce-grid-emoticon td,
+.mce-grid-emoticon td a,
+.mce-grid-emoticon td a:hover {background-color:white}
+.mce-grid-emoticon td,
+.mce-grid-emoticon a {
+  width:18px;
+  height:18px;
+  background:none;
+}
+
 /* @label */
 .mce-label {display:inline-block}
-.mce-label.mce-autoscroll {overflow:auto}
-.mce-label.mce-disabled {opacity:.2}
-.mce-label.mce-multiline {
-  white-space:pre-wrap;
-  line-height:normal;
+.mce-label.mce-autoscroll {
+  overflow:auto;
+  line-height:1.4;
 }
+.mce-label.mce-disabled {opacity:.2}
+.mce-label.mce-multiline {white-space:pre-wrap}
 .mce-label.mce-error {color:#A00}
 
 /* @menubtn */
@@ -303,6 +316,13 @@ body .mce-abs-layout-item,
   text-align:left;
 }
 .mce-listbox .mce-caret {}
+.mce-toolbar-grp .mce-listbox span,
+.mce-toolbar-grp .mce-menubtn span {
+  font-size:80%;
+  font-weight:bold;
+  text-transform:uppercase;
+  padding-left:.2em;
+}
 
 /* @textbox */
 .mce-textbox {
@@ -572,11 +592,7 @@ div.mce-fullscreen {
 
 /* @checkbox */
 .mce-checkbox {cursor:pointer}
-.mce-i-checkbox {
-  margin:0 .3076923076923077em 0 0;
-  visibility:hidden;
-}
-.mce-checked .mce-i-checkbox {visibility:visible}
+.mce-i-checkbox {margin:0 .3076923076923077em 0 0}
 
 /* @colorpicker */
 .mce-colorpicker {
@@ -708,6 +724,7 @@ div.mce-fullscreen {
   display:inline-block;
   width:1em;
   height:1em;
+  vertical-align:middle;
   font:normal normal normal 100%/1 FontAwesome;
   font-size:inherit;
   text-rendering:auto;
@@ -742,7 +759,7 @@ div.mce-fullscreen {
 .mce-i-code:before {content:"\f121"}
 .mce-i-insertdatetime:before {content:"\f017"}
 .mce-i-preview:before {content:"\f06e"}
-.mce-i-forecolor:before {content:"\f043"}
+.mce-i-forecolor:before {content:"\f040"}
 .mce-i-backcolor:before {content:"\f1fc"}
 .mce-i-table:before {content:"\f0ce"}
 .mce-i-hr:before {content:"\f141"}
@@ -779,5 +796,7 @@ div.mce-fullscreen {
 }
 .mce-i-browse:before {content:"\f07c"}
 .mce-i-pastetext:before {content:"\f0ea"}
-.mce-i-checkbox:before {content:"\f00c"}
-.mce-i-selected:before {content:"\f192"}
+.mce-i-selected:before {content:"\f10c"}
+.mce-active .mce-i-selected:before {content:"\f192"}
+.mce-i-checkbox:before {content:"\f0c8"}
+.mce-checked .mce-i-checkbox:before {content:"\f14a"}
