@@ -694,21 +694,12 @@ div.mce-fullscreen {
   width:100%;
   height:100%;
   opacity:.6;
-  background:#fff url(img/loader.gif) no-repeat center center;
+  background:#fff url('img/loader.gif') no-repeat 50% 50%;
 }
 .mce-throbber-inline {
   position:static;
   height:50px;
 }
-
-
-
-
-
-
-
-
-
 
 /* @layout */
 .mce-fit-layout {display:inline-block}
@@ -757,6 +748,7 @@ div.mce-fullscreen {
 .mce-i-media:before {content:"\f008"}
 .mce-i-help:before {content:"\f059"}
 .mce-i-code:before {content:"\f121"}
+.mce-i-sourcecode:before {content:"\f1c9"}
 .mce-i-insertdatetime:before {content:"\f017"}
 .mce-i-preview:before {content:"\f06e"}
 .mce-i-forecolor:before {content:"\f040"}

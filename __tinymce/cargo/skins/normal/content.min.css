@@ -76,6 +76,7 @@ hr {cursor:default}
   border:1px dotted;
   border-color:rgba(255,255,255,.5);
 }
+.mce-item-table caption {border-width:1px 0 0}
 .mce-item-table td,
 .mce-item-table th {padding:.2em}
 td.mce-item-selected,

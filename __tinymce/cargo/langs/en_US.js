@@ -58,6 +58,8 @@ tinymce.addI18n('en_US', {
     "Save": "Save",
     "Print": "Print",
     "Delete": "Delete",
+    "Enable": "Enable",
+    "Disable": "Disable",
 
     "Ignore all": "Ignore All",
     "Select all": "Select All",
@@ -100,6 +102,8 @@ tinymce.addI18n('en_US', {
     "Style": "Style",
     "Vertical space": "V-Space",
     "Horizontal space": "H-Space",
+    "Vertical alignment": "V-Align",
+    "Horizontal alignment": "H-Align",
     "Border": "Border",
 
     "Insert\/edit link": "Insert\/Edit Link",
@@ -111,8 +115,8 @@ tinymce.addI18n('en_US', {
     "Rel": "Rel",
     "Target": "Target",
     "None": "None",
-    "Same page": "Same Window",
-    "New page": "New Window",
+    "Same window": "Same Window",
+    "New window": "New Window",
     "Nofollow": "No Follow",
     "The URL you entered seems to be an external link. Do you want to add the required http:\/\/ prefix?": "The URL you entered seems to be an external link. Do you want to add the required http:\/\/ prefix?",
     "Target": "Target",
@@ -156,6 +160,7 @@ tinymce.addI18n('en_US', {
     "Paste row after": "Paste Row After",
 
     "Column group": "Column Group",
+    "Row group": "Row Group",
 
     "Rows": "Rows",
 
@@ -169,11 +174,15 @@ tinymce.addI18n('en_US', {
     "Row properties": "Row Properties",
     "Cell properties": "Cell Properties",
 
+    "Table caption": "Table Caption",
+
     "Copy row": "Copy Row",
     "Cut row": "Cut Row",
 
     "Row type": "Row Type",
     "Cell type": "Cell Type",
+
+    "Header cell": "Header Cell",
 
     "Header": "Header",
     "Body": "Body",
@@ -192,8 +201,6 @@ tinymce.addI18n('en_US', {
     "Cell spacing": "Cell Spacing",
 
     "Heading cell": "Heading Cell",
-
-    "Row group": "Row Group",
 
     "Insert template": "Insert Template",
     "Templates": "Templates",
@@ -216,6 +223,8 @@ tinymce.addI18n('en_US', {
     "Custom color": "Custom Color",
     "No color": "No Color",
 
+    "Abbreviation": "Abbreviation",
+    "Definition": "Definition",
     "Marker": "Marker",
     "Keyboard": "Keyboard",
 

@@ -1,6 +1,6 @@
 <style>body{background:white;font:normal normal 13px/1.4 arial;color:#333}</style>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="http://localhost/__tinymce/cargo/skins/normal/skin.min.css?c" rel="stylesheet">
+<link href="http://localhost/__tinymce/cargo/skins/normal/skin.min.css?d" rel="stylesheet">
 
 <textarea name="content" class="textarea-block textarea-expand code MTE" cols="30" rows="10"></textarea>
 <script src="tinymce.custom.min.js"></script>
@@ -12,9 +12,9 @@ tinymce.init({
     height: 300,
     skin: false, /* load the CSS manually (we need the file cache parameter) */
     content_css: [
-        'http://localhost/mecha/cabinet/shields/widgets.css?c',
-        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css?',
-        tinymce.baseURL + '/skins/normal/content.min.css?'
+        'http://localhost/mecha/cabinet/shields/widgets.css?d',
+        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css?d',
+        tinymce.baseURL + '/skins/normal/content.min.css?d'
     ],
     theme: 'mecha',
     language: 'en_US',
@@ -22,7 +22,6 @@ tinymce.init({
     toolbar1: 'bold italic underline strikethrough code | removeformat | paragraph blockquote | hr | alignleft aligncenter alignright alignjustify | bullist numlist | superscript subscript | pagebreak',
     toolbar2: 'restoredraft undo redo | styleselect | fontselect fontsizeselect | print | table | forecolor backcolor | link image media',
     toolbar3: ' outdent indent | template charmap emoticons insertdatetime | sourcecode fullscreen | searchreplace',
-    image_advtab: true,
     menubar: false, // hide menubars
     target_list: [{
         title: 'None',
@@ -42,6 +41,8 @@ tinymce.init({
         value: 'nofollow'
     }],
     contextmenu: 'sourcecode | link image inserttable | cell row column deletetable',
+    image_advtab: true,
+    table_appearance_options: true,
     insertdatetime_element: true,
     pagebreak_split_block: true,
     autosave_restore_when_empty: false,
@@ -156,6 +157,12 @@ tinymce.init({
     }, {
         title: 'Inline',
         items: [{
+            title: 'Abbreviation',
+            format: 'abbr'
+        }, {
+            title: 'Definition',
+            format: 'dfn'
+        }, {
             title: 'Code',
             format: 'code'
         }, {
