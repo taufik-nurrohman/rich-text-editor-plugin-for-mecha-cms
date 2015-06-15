@@ -1,0 +1,84 @@
+/* Required for `.mce-menu-item-preview` */
+html {
+  font-size:14px;
+  background-color:#333;
+  color:white;
+  overflow:auto;
+  overflow-x:hidden;
+  padding:1em;
+}
+h1,h2,h3,h4,h5,h6 {overflow:hidden} /* webkit :( */
+body {
+  background:none;
+  font:inherit;
+  color:inherit;
+  overflow:inherit;
+}
+pre {
+  background-color:white;
+  color:#333;
+}
+img {
+  max-width:none;
+  max-height:none;
+}
+.emo {
+  display:inline-block;
+  vertical-align:middle;
+}
+.mce-object {background:white url('img/object.gif') no-repeat 50% 50%}
+.mce-pagebreak {
+  cursor:default;
+  display:block;
+  margin:0 auto;
+  width:100%;
+  height:.4em;
+  border:0;
+  border-top:1px dashed;
+  background-color:rgba(255,255,255,.1);
+  page-break-before:always;
+}
+@media print {
+  .mce-pagebreak {display:none}
+}
+.mce-item-anchor {
+  cursor:default;
+  display:inline-block;
+  -webkit-user-select:all;
+  -moz-user-select:all;
+  user-select:all;
+  -webkit-user-modify:read-only;
+  -moz-user-modify:read-only;
+  user-modify:read-only;
+  width:9px !important;
+  height:9px !important;
+  border:0;
+  background:#d5d5d5 url('img/anchor.gif') no-repeat 50% 50%;
+}
+.mce-nbsp,
+.mce-shy {}
+.mce-shy:after {content:'-'}
+hr {cursor:default}
+.mce-match-marker {}
+.mce-match-marker-selected {}
+.mce-edit-focus {}
+.mce-spellchecker-word {
+  border-bottom:2px solid red;
+  cursor:default;
+}
+.mce-spellchecker-grammar {
+  border-bottom:2px solid green;
+  cursor:default;
+}
+.mce-item-table,
+.mce-item-table td,
+.mce-item-table th,
+.mce-item-table caption {
+  border:1px dotted;
+  border-color:rgba(255,255,255,.5);
+}
+.mce-item-table caption {border-width:1px 0 0}
+.mce-item-table td,
+.mce-item-table th {padding:.2em}
+td.mce-item-selected,
+th.mce-item-selected {background-color:#39f !important}
