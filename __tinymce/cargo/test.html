@@ -12,13 +12,13 @@
     }
     </style>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="skins/normal/skin.min.css?d" rel="stylesheet">
+    <link href="skins/normal/skin.min.css" rel="stylesheet">
 
   </head>
   <body>
 
 <textarea name="content" class="textarea-block textarea-expand code MTE" cols="30" rows="10"></textarea>
-<script src="tinymce.custom.min.js?d"></script>
+<script src="tinymce.custom.min.js"></script>
 <script>
 var lorem = '<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>';
 var figure = '<figure class="image-container align-%1$s"><img alt="Placeholder Image" src="%2$s/skins/normal/img/placeholder.png" width="300" height="200" /><figcaption>Image caption goes here&hellip;</figcaption></figure>';
@@ -27,9 +27,9 @@ tinymce.init({
     height: 300,
     skin: false, /* load the CSS manually (we need the file cache parameter) */
     content_css: [
-        'http://localhost/mecha/cabinet/shields/widgets.css?d',
-        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css?d',
-        tinymce.baseURL + '/skins/normal/content.min.css?d'
+        'http://localhost/mecha/cabinet/shields/widgets.css',
+        'http://localhost/mecha/cabinet/shields/normal-custom/shell/atom.css',
+        tinymce.baseURL + '/skins/normal/content.min.css?h'
     ],
     theme: 'mecha',
     language: 'en_US',
@@ -135,7 +135,7 @@ tinymce.init({
         'Times New Roman="Times New Roman",Times,serif;' +
         'Trebuchet MS="Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;' +
         'Verdana=Verdana,Geneva,sans-serif;',
-    fontsize_formats: '8=8pt 10=10pt 12=12pt 14=14pt 16=16pt',
+    fontsize_formats: 'XX-Small=xx-small X-Small=x-small Small=small Normal=100% Medium=medium Large=large X-Large=x-large XX-Large=xx-large',
     style_formats: [{
         title: 'Heading',
         items: [{

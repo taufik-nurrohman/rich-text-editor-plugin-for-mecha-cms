@@ -7,13 +7,13 @@ html {
   overflow-x:hidden;
   padding:1em;
 }
-h1,h2,h3,h4,h5,h6 {overflow:hidden} /* webkit :( */
 body {
   background:none;
   font:inherit;
   color:inherit;
   overflow:inherit;
 }
+h1,h2,h3,h4,h5,h6 {line-height:normal} /* webkit :( */
 pre {
   background-color:white;
   color:#333;
