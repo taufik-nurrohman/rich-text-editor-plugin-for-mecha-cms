@@ -10,7 +10,7 @@ Weapon::add('shell_after', function() {
 
 Weapon::add('SHIPMENT_REGION_BOTTOM', function() {
     echo Asset::javascript(array(
-        __DIR__ . DS . 'assets' . DS . 'sword' . DS . 'jquery.min.js',
+        File::D(__DIR__, 2) . DS . 'assets' . DS . 'sword' . DS . 'jquery.min.js',
         __DIR__ . DS . 'assets' . DS . 'sword' . DS . 'trumbowyg.min.js',
         __DIR__ . DS . 'plugins' . DS . 'base64' . DS . 'trumbowyg.base64.min.js',
         __DIR__ . DS . 'plugins' . DS . 'colors' . DS . 'trumbowyg.colors.min.js',
