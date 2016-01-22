@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="assets/shell/trumbowyg.min.css">
+  <link rel="stylesheet" href="plugins/colors/ui/trumbowyg.colors.min.css">
+  <link rel="stylesheet" href="plugins/preformatted/ui/trumbowyg.preformatted.min.css">
+  <style>
+body {
+  background-color:white;
+  font:normal normal 13px/1.4 Helmet,FreeSans,Sans-Serif;
+  color:#333;
+}
+button,
+input,
+select,
+textarea {
+  margin:0;
+  padding:0;
+  background:none;
+  border:0;
+  outline:0;
+  font:inherit;
+  color:inherit;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+}
+  </style>
+</head>
+  <body>
+    <textarea class="MTE" placeholder="Content goes here&hellip;"></textarea>
+    <script src="assets/sword/jquery.min.js"></script>
+    <script src="assets/sword/trumbowyg.min.js"></script>
+    <script src="plugins/base64/trumbowyg.base64.min.js"></script>
+    <script src="plugins/colors/trumbowyg.colors.min.js"></script>
+    <script src="plugins/editlink/trumbowyg.editlink.min.js"></script>
+    <script src="plugins/preformatted/trumbowyg.preformatted.min.js"></script>
+    <script>
+$('.MTE').trumbowyg({
+    semantic: true,
+    resetCss: true,
+    removeformatPasted: true,
+    tagsToRemove: ['script', 'style', 'textarea'],
+    btnsDef: {
+        image: {
+            dropdown: ['insertImage', 'base64'],
+            ico: 'insertImage'
+        },
+        linkImproved: {
+            dropdown: ['createLink', 'editLink', 'unlink'],
+            ico: 'link'
+        }
+    },
+    btns: ['viewHTML',
+        '|', 'formatting',
+        '|', 'btnGrp-design',
+        '|', 'linkImproved',
+        '|', 'image',
+        '|', 'btnGrp-justify',
+        '|', 'btnGrp-lists',
+        '|', 'foreColor', 'backColor',
+        '|', 'preformatted',
+        '|', 'horizontalRule']
+    
+});
+    </script>
+  </body>
+</html>

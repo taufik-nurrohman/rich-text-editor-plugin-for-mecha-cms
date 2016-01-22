@@ -1,0 +1,2 @@
+plugin_rich_text_editor:
+  trumbowyg: Trumbowyg

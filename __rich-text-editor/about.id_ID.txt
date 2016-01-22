@@ -1,0 +1,14 @@
+Title: Editor Teks Kaya
+Author: Taufik Nurrohman
+URL: http://mecha-cms.com
+Version: 1.0.0
+
+====
+
+> Menggunakan editor teks kaya sebagai editor posting bawaan.
+
+Pergi ke halaman manajer [konfigurasi]({{url.manager}}config "Konfigurasi") dan set nilai _Parser HTML_ ke `HTML`.
+
+<!-- block:donate -->
+
+*[HTML]: Hyper Text Markup Language
