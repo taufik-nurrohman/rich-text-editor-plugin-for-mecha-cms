@@ -1,6 +1,6 @@
 Title: Editor Teks Kaya
 Author: Taufik Nurrohman
-URL: http://mecha-cms.com
+URL: http://latitudu.com
 Version: 1.0.1
 
 ====
