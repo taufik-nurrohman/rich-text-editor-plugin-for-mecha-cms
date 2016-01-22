@@ -7,7 +7,7 @@ Version: 1.0.0
 
 > Menggunakan editor teks kaya sebagai editor posting bawaan.
 
-Pergi ke halaman manajer [konfigurasi]({{url.manager}}config "Konfigurasi") dan set nilai _Parser HTML_ ke `HTML`.
+Plugin ini memerlukan Anda untuk menonaktifkan mesin parser HTML. Pergi ke halaman manajer [konfigurasi]({{url.manager}}config "Konfigurasi") dan pilih opsi `HTML` pada bidang _Parser HTML_.
 
 <!-- block:donate -->
 
