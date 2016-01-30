@@ -1,2 +1,12 @@
 plugin_rich_text_editor:
-  trumbowyg: Trumbowyg
+  title:
+    editor: Editor
+    editors:
+      ckeditor: CKEditor
+      jquery-te: jQuery TE
+      trumbowyg: Trumbowyg
+    has:
+      _: Jangan Memuat %s
+  description:
+    has:
+      _: Pilih opsi ini jika %s telah termuat pada tameng Anda.

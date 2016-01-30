@@ -1,2 +1,12 @@
 plugin_rich_text_editor:
-  trumbowyg: Trumbowyg
+  title:
+    editor: Editor
+    editors:
+      ckeditor: CKEditor
+      jquery-te: jQuery TE
+      trumbowyg: Trumbowyg
+    has:
+      _: Don’t Load %s
+  description:
+    has:
+      _: Select this if %s already loaded in your shield.

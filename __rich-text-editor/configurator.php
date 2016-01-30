@@ -1,17 +1,25 @@
-<form class="form-plugin" action="<?php echo $config->url_current; ?>/update" method="post">
-  <?php echo Form::hidden('token', $token); ?>
-  <?php
+<?php
 
-  $rich_text_editor_config = File::open(__DIR__ . DS . 'states' . DS . 'config.txt')->unserialize();
+$c_rich_text_editor = $config->states->{'plugin_' . md5(File::B(__DIR__))};
 
-  $options = array();
-  foreach(glob(__DIR__ . DS . 'workers' . DS . '*', GLOB_NOSORT | GLOB_ONLYDIR) as $editor) {
-      $editor = File::B($editor);
-      $options[$editor] = isset($speak->plugin_rich_text_editor->{$editor}) ? $speak->plugin_rich_text_editor->{$editor} : Text::parse($editor, '->title');
-  }
+$options = array();
+foreach(glob(__DIR__ . DS . 'workers' . DS . '*', GLOB_NOSORT | GLOB_ONLYDIR) as $editor) {
+    $editor = File::B($editor);
+    $options[$editor] = isset($speak->plugin_rich_text_editor->title->editors->{$editor}) ? $speak->plugin_rich_text_editor->title->editors->{$editor} : Text::parse($editor, '->title');
+}
 
-  asort($options);
+asort($options);
 
-  ?>
-  <p><?php echo Form::select('editor', $options, $rich_text_editor_config['editor']) . ' ' . Jot::button('action', $speak->update); ?></p>
-</form>
+?>
+<label class="grid-group">
+  <span class="grid span-1 form-label"><?php echo $speak->plugin_rich_text_editor->title->editor; ?></span>
+  <span class="grid span-5"><?php echo Form::select('editor', $options, $c_rich_text_editor->editor); ?></span>
+</label>
+<div class="grid-group">
+  <span class="grid span-1"></span>
+  <div class="grid span-5">
+    <?php foreach(array('jquery' => 'jQuery', 'bootstrap' => 'Bootstrap') as $k => $v): ?>
+    <div><?php echo Form::checkbox('has[' . $k . ']', 1, isset($c_rich_text_editor->has->{$k}), sprintf($speak->plugin_rich_text_editor->title->has->_, $v)) . ' ' . Jot::info(sprintf($speak->plugin_rich_text_editor->description->has->_, $v)); ?></div>
+	<?php endforeach; ?>
+  </div>
+</div>
